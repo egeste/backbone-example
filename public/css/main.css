@@ -1,0 +1,62 @@
+body {
+  padding: 25px;
+}
+
+h1 {
+  text-transform: capitalize;
+}
+
+h1 a {
+  color: #000;
+}
+
+.empty,
+.loading {
+  margin: 35px auto;
+}
+
+.empty {
+  color: #fff;
+  width: 100px;
+  padding: 15px 20px;
+  text-align: center;
+  border-radius: 5px;
+  border: 5px solid #ccc;
+  background-color: #999;
+}
+
+.loading {
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+  background-image: url('/img/spinner.gif');
+}
+
+.email {
+  margin: 5px;
+  padding: 5px;
+}
+
+.email .subject,
+.email .address,
+.email .body {
+  margin: auto;
+}
+
+.multi .email {
+  border-radius: 5px;
+  border: 5px solid #ccc;
+}
+
+.gallery .email {
+  float: left;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.list .email .body {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

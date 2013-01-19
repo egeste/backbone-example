@@ -1,0 +1,8 @@
+{
+  "name": "router-example"
+, "version": "0.1.0"
+, "dependencies": {
+    "express": "*"
+  , "underscore": "1.4.3"
+  }
+}
