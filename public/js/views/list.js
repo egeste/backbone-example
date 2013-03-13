@@ -1,9 +1,11 @@
 define(function(require) {
-  var Backbone = require('Backbone')
+  var _ = require('underscore')
+  , Backbone = require('Backbone')
   , Email = require('views/email')
   return Backbone.View.extend({
     initialize: function() {
       this.model.on('change:view', this.updateView, this)
+      this._add = _.bind(this._add, this)
     }
     , render: function() {
       this.$title = $('<h1/>')
@@ -20,6 +22,9 @@ define(function(require) {
       return this
     }
     , add: function(email) {
+      _.defer(this._add, email)
+    }
+    , _add: function(email) {
       var single = new Email({ model: email })
       single.$el.appendTo(this.el)
       single.render()
