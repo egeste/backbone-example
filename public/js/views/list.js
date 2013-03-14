@@ -8,7 +8,9 @@ define(function(require) {
     , render: function() {
       this.$title = $('<h1/>')
       this.$el.html(this.$title)
+      this.$children = []
       this.collection.each(this.add, this)
+      this.$el.append(this.$children)
       return this.updateView()
     }
     , updateView: function() {
@@ -21,8 +23,7 @@ define(function(require) {
     }
     , add: function(email) {
       var single = new Email({ model: email })
-      single.$el.appendTo(this.el)
-      single.render()
+      this.$children.push(single.render().$el)
     }
   })
 })
